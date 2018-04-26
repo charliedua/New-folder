@@ -1,5 +1,4 @@
-from timeit import default_timer as timer
-
+import cProfile
 
 class Number(object):
     """
@@ -14,13 +13,6 @@ class Number(object):
                 count += 1;
         return count
 
-import cProfile
-import re
+num = Number(50000000)
 
-
-num = Number(500000)
-start = timer()
-num = Number(500000)
-cProfile.run('num.CalcCount(5, 3)')
-end = timer()
-print(end - start)
+cProfile.run('num.CalcCount(3, 5)')

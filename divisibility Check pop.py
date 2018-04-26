@@ -1,6 +1,4 @@
-from timeit import default_timer as timer
-
-
+import cProfile
 
 def CalcCount(number, x, y):
     count = 0
@@ -9,14 +7,6 @@ def CalcCount(number, x, y):
             count += 1;
     return count
 
-import cProfile
-import re
+CalcCount(50000000, 3, 5)
 
-
-CalcCount(500000, 3, 5)
-start = timer()
 cProfile.run('CalcCount(500000, 3, 5)')
-
-end = timer()
-print(end - start)
-
