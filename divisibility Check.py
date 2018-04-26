@@ -1,4 +1,5 @@
 import cProfile
+import functools
 
 class Number(object):
     """
@@ -15,4 +16,7 @@ class Number(object):
 
 num = Number(50000000)
 
+num.CalcCount(3, 5)
+
 cProfile.run('num.CalcCount(3, 5)')
+

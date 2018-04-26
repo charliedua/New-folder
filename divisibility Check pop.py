@@ -1,5 +1,7 @@
 import cProfile
+import functools
 
+@functools.lru_cache(maxsize=None)
 def CalcCount(number, x, y):
     count = 0
     for i in range(0, number):
@@ -9,4 +11,4 @@ def CalcCount(number, x, y):
 
 CalcCount(50000000, 3, 5)
 
-cProfile.run('CalcCount(500000, 3, 5)')
+cProfile.run('CalcCount(50000000, 5, 3)')
